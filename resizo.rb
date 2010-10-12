@@ -19,8 +19,8 @@ Resizo is a nice and simple wrapper to resizing images from the command line usi
   
   where [options] are:
   EOS
-  opt :dest, "Destination image path", :default => '~/Desktop/images/modified'
-  opt :orig, "Original image path", :default => '~/Desktop/images/original'
+  opt :dest, "Destination image path"
+  opt :orig, "Original image path"
   opt :width, "Desired width of image", :type => :int
   opt :height, "Desired height of image", :type => :int
   opt :action, "What method to perform", :type => :string
@@ -36,6 +36,15 @@ class Resizo
     @destination = opts[:dest]
     @originals = opts[:orig]
     @action = opts[:action]
+  end
+
+  def calculate_ratio
+    if @height == nil
+      puts "height is false"
+    end
+    if @width == nil
+      puts "width is false"
+    end
   end
 
   def find_images
@@ -59,7 +68,9 @@ class Resizo
   def do_action
     case @action
     when "resize"
-      resize
+      #resize
+    when "ratio"
+      calculate_ratio 
     else
       puts "Incorrect or no argument provided."
       exit
