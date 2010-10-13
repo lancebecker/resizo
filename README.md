@@ -17,6 +17,10 @@ Run these commands to get the dependencies
         sudo brew install FreeImage
         sudo gem install trollop image_science RubyInline
 
+Or try out the install.sh
+        
+        ./install.sh
+
 ## Options
 
         Usage:
