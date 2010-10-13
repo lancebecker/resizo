@@ -3,20 +3,31 @@ Resizo
 A handy little resizer script.
 
 ## Required to run
-- ruby / rubygems
-- homebrew
+- ruby
 - FreeImage
 
-## Gems
+## Required Gems
 - trollop
 - image_science
 - RubyInline
 
-## Dependency installation guide
+## Installation guide
 Run these commands to get the dependencies
 
         sudo brew install FreeImage
         sudo gem install trollop image_science RubyInline
 
-## Todo
-Include the trollop library as a file instead of requireing it as a gem
+## Options
+
+        Usage:
+            ruby resizo.rb [options]
+  
+            where [options] are:
+              --dest, -d:   Destination image path
+              --orig, -o:   Original image path
+              --width, -w <i>:   Desired width of image
+              --height, -h <i>:   Desired height of image
+              --action, -a <s>:   What method to perform
+              --version, -v:   Print version and exit
+              --help, -e:   Show this message
+
