@@ -1,6 +1,6 @@
 Resizo
 =======
-A handy little resizer script.
+Resizo is a nice and simple CLI to resizing images from the command line using the FreeImage + ImageScience libraries
 
 ## Required to run
 - ruby

@@ -12,15 +12,15 @@ dirpath = Dir.pwd
 opts = Trollop::options do 
   version "Resizo 0.0.1"
   banner <<-EOS
-Resizo is a nice and simple wrapper to resizing images from the command line using the FreeImage + ImageScience libraries
+Resizo is a nice and simple CLI to resizing images from the command line using the FreeImage + ImageScience libraries
 
   Usage:
     resizo [options]
   
   where [options] are:
   EOS
-  opt :dest, "Destination image path"
-  opt :orig, "Original image path"
+  opt :dest, "Destination image path", :type => :string
+  opt :orig, "Original image path", :type => :string
   opt :width, "Desired width of image", :type => :int
   opt :height, "Desired height of image", :type => :int
   opt :action, "What method to perform", :type => :string
@@ -39,11 +39,22 @@ class Resizo
   end
 
   def calculate_ratio
-    if @height == nil
-      puts "height is false"
-    end
-    if @width == nil
-      puts "width is false"
+    find_images
+
+    orig_path = @originals + "/" + image   
+
+    image_height = 0
+    image_width = 0
+
+    @images.each do |image|
+      if @width == nil
+        ImageScience.with_image(orig_path) do |img|
+          
+        end
+      end
+      if @height == nil
+
+      end
     end
   end
 
@@ -68,7 +79,7 @@ class Resizo
   def do_action
     case @action
     when "resize"
-      #resize
+      resize
     when "ratio"
       calculate_ratio 
     else
@@ -82,12 +93,12 @@ class Resizo
     folders_exist?
     
     @images.each do |image|
-      image_o = @originals + "/" + image
-      image_d = @destination + "/" + image
+      orig_path = @originals + "/" + image
+      dest_path = @destination + "/" + image
 
-      ImageScience.with_image(image_o) do |img|
-        img.resize(@height, @width) do |image2|
-          image2.save "#{image_d}"
+      ImageScience.with_image(orig_path) do |img|
+        img.resize(@height, @width) do |dest_img|
+          dest_img.save "#{dest_path}"
         end
       end
     end
