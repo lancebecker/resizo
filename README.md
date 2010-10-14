@@ -1,17 +1,18 @@
 Resizo
 =======
-Resizo is a simple command line interface for resizing images from the command line using the FreeImage + ImageScience libraries
+Resizo is a simple command line interface for resizing images from the command line using the FreeImage + ImageScience libraries.
 
 ## Required Libraries/Frameworks
-- ruby
+- Ruby 1.8.6+ 
 - FreeImage
 
 ## Required Gems
-- image_science
+- Image Science
 - RubyInline
 
 ## Installation guide
-Run these commands to get the dependencies needed
+Run these commands to get the dependencies needed:
+Note: You could compile FreeImage without Homebrew
 
         sudo brew install FreeImage
         sudo gem install image_science RubyInline

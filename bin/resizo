@@ -7,10 +7,10 @@ require "lib/resizo/utilities.rb"
 opts = Trollop::options do 
   version "Resizo 0.0.5"
   banner <<-EOS
-Resizo is a simple command line interface for resizing images from the command line using the FreeImage + ImageScience libraries
+Resizo is a simple command line interface for resizing images from the command line using the FreeImage + ImageScience libraries.
 
   Usage:
-    ruby resizo.rb [options]
+    resizo [options]
   
   where [options] are:
   EOS
