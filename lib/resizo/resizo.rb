@@ -3,17 +3,37 @@
 require 'rubygems'
 require 'fileutils'  
 require 'find'
+require 'yaml'
 require 'image_science'    
 
 class Resizo
 
-  attr_accessor :height, :width, :destination, :originals
+  attr_accessor :height, :width, :destination, :originals, :config
 
   def initialize(opts)
-    @height = opts[:height]
-    @width = opts[:width]
-    @destination = opts[:dest]
-    @originals = opts[:orig]
+
+    if opts[:config] == nil
+      @height = opts[:height]
+      @width = opts[:width]
+      @destination = opts[:dest]
+      @originals = opts[:orig]
+    else
+      @config = opts[:config]
+      puts "--> Attempting to load configuration file"
+      
+      unless configuration = YAML::load(File.open(@config))
+        puts "[error!] configuration file did not load correctly."
+        exit
+      end
+
+      puts "[ok!] loaded configuration file."
+
+      @height = configuration["height"]
+      @width = configuration["width"]
+      @destination = configuration["destination"].to_s
+      @originals = configuration["original"].to_s
+
+    end
   end
 
   def do_action
@@ -50,8 +70,9 @@ class Resizo
   end
 
   def folders_exist?
-    # If the destination directory does not exist create it
-    if @destination == nil
+    # If the destination or originals directories do not exist exit gracefully
+    
+    if @destination == nil || @originals == nil
       puts "[error!] please provide a destination directory"
       exit
     end

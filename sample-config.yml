@@ -1,0 +1,11 @@
+# Resizo
+# -------------------------------
+# sample configuration file
+# -------------------------------
+
+destination: ~/Desktop/images/dest
+original: ~/Desktop/images/orig
+width: 100
+height: 100
+
+

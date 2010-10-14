@@ -4,7 +4,7 @@ require "lib/resizo/trollop.rb"
 require "lib/resizo/resizo.rb"
 
 opts = Trollop::options do 
-  version "Resizo 0.0.5"
+  version "Resizo 0.0.2"
   banner <<-EOS
 Resizo is a simple command line interface for resizing images from the command line using the FreeImage + ImageScience libraries.
 
@@ -17,6 +17,7 @@ Resizo is a simple command line interface for resizing images from the command l
   opt :orig, "Original image path", :type => :string
   opt :width, "Desired width of image", :type => :int
   opt :height, "Desired height of image", :type => :int
+  opt :config, "Parse a yaml configuration file", :type => :string
 end      
 
 resizo = Resizo.new(opts)
