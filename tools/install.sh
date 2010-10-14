@@ -15,7 +15,7 @@ if [ -d "$HOMEBREW" ]; then
   echo "[ok!] Homebrew package manager is already installed" 
 else
   echo "Homebrew not found: installing homebrew..."
-  ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"
+  sudo ruby -e "$(curl -fsS http://gist.github.com/raw/323731/install_homebrew.rb)"
 fi
                           
 echo " "
@@ -36,4 +36,4 @@ echo " "
 # ---------------------------------------------------------
 # brute forcing this atm
 echo "--> Installing required gems"
-sudo gem install trollop RubyInline image_science 
+sudo gem install RubyInline image_science 
