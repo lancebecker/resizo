@@ -2,7 +2,6 @@
 
 require "lib/resizo/trollop.rb" 
 require "lib/resizo/resizo.rb"
-require "lib/resizo/utilities.rb"
 
 opts = Trollop::options do 
   version "Resizo 0.0.5"

@@ -10,7 +10,7 @@ Resizo is a simple command line interface for resizing images from the command l
 - Image Science
 - RubyInline
 
-## Installation guide
+## Installation 
 Run these commands to get the dependencies needed:
 Note: You could compile FreeImage without Homebrew
 
@@ -20,6 +20,11 @@ Note: You could compile FreeImage without Homebrew
 Or try out the install.sh (still a bit rough)
         
         ./tools/install.sh
+
+
+## Usage example
+
+        ./bin/resizo -o ~/Pictures/photos -d ~/Pictures/photos_cropped -h 450 -w 450
 
 ## Options
 

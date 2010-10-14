@@ -51,6 +51,11 @@ class Resizo
 
   def folders_exist?
     # If the destination directory does not exist create it
+    if @destination == nil
+      puts "[error!] please provide a destination directory"
+      exit
+    end
+
     unless File.directory? destination  
       FileUtils.mkdir(destination)    
     end
@@ -63,6 +68,11 @@ class Resizo
 
     @images.each do |image|
       orig_path = @originals + "/" + image    
+
+      if @width == nil && @height == nil
+        puts "[error!] please provide a height or width"
+        exit
+      end
 
       # Checking if either height or width was not provided, if
       # either is nil lets gather up the original images dimensions
