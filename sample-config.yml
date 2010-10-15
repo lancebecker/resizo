@@ -3,8 +3,8 @@
 # sample configuration file
 # -------------------------------
 
-destination: ~/Desktop/images/dest
-original: ~/Desktop/images/orig
+original: "~/Pictures/orig"
+destination: "~/Pictures/dest"
 width: 100
 height: 100
 

@@ -36,5 +36,9 @@ Or try out the install.sh (still a bit rough)
               --orig, -o:   Original image path
               --width, -w <i>:   Desired width of image
               --height, -h <i>:   Desired height of image
+              --config, -c <s>:   Parse a yaml configuration file
               --version, -v:   Print version and exit
               --help, -e:   Show this message
+
+## Notes
+Using the configuration file is experimental and under development.

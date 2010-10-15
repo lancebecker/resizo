@@ -30,8 +30,8 @@ class Resizo
 
       @height = configuration["height"]
       @width = configuration["width"]
-      @destination = configuration["destination"].to_s
       @originals = configuration["original"].to_s
+      @destination = configuration["destination"].to_s
 
     end
   end
@@ -77,8 +77,10 @@ class Resizo
       exit
     end
 
-    unless File.directory? destination  
-      FileUtils.mkdir(destination)    
+    unless File.directory? @destination  
+      puts "--> Creating destination directory..."      
+      puts "[ok!] destination directory created"
+      FileUtils.mkdir(@destination)    
     end
   end
 
