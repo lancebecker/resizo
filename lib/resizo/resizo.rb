@@ -71,7 +71,6 @@ class Resizo
 
   def folders_exist?
     # If the destination or originals directories do not exist exit gracefully
-    
     if @destination == nil || @originals == nil
       puts "[error!] please provide a destination directory"
       exit
