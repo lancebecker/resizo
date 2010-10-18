@@ -23,26 +23,20 @@ Or try out the install.sh (still a bit rough)
 
 
 ## Usage example
-
-### Parameter style:
-
+### Parameter style
         ./bin/resizo -o ~/Pictures/photos -d ~/Pictures/photos_cropped -h 450 -w 450
 
-### YAML config style:
-
+### YAML config style
         ./bin/resizo -c sample-config.yml
 
 ## Gotchas
-
-If using resizo with parameters the paths must be the full path, whereas using a config file to be relative.
-  eg.
+If using resizo with parameters the paths must be the full path, whereas using a config file to be relative. eg.
 
         (params) ~/Users/full/path/to/images
 
         (config) path/to/images
 
 ## Options
-
         Usage:
             resizo [options]
   
